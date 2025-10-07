@@ -101,7 +101,7 @@ export default function Page({ params }) {
           </div>
           <div className="method mt-3">
             <b className="flex items-center gap-2">
-              <GiFireBowl size={20} className="mb-1 " /> Let's Cook :{" "}
+              <GiFireBowl size={20} className="mb-1 " /> Let&apos;s Cook :
             </b>
             <p style={{ color: colors.text }} className="mt-2 indent-10">
               {meal.strInstructions}
