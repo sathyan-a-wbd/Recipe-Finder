@@ -4,6 +4,7 @@ import { useSearch } from "../context/SearchContext";
 import Link from "next/link";
 import { HashLoader } from "react-spinners";
 import { GiCampCookingPot } from "react-icons/gi";
+import Image from "next/image";
 const MoreRecipes = ({ data }) => {
   let {
     setUrl,
@@ -33,6 +34,7 @@ const MoreRecipes = ({ data }) => {
                 <div className="flex gap-2">
                   {meal.strYoutube && (
                     <Link
+                      prefetch={false}
                       href={meal.strYoutube}
                       target="_blank"
                       rel="noreferrer"
@@ -42,6 +44,7 @@ const MoreRecipes = ({ data }) => {
                     </Link>
                   )}
                   <Link
+                    prefetch={false}
                     href={`${meal.idMeal ? "/reciepes/" : "/category/"}${
                       meal.idMeal ? meal.idMeal : meal.strCategory
                     }`}

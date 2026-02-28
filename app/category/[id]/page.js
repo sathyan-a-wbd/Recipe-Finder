@@ -4,6 +4,7 @@ import { useSearch } from "../../context/SearchContext";
 import Link from "next/link";
 import { HashLoader } from "react-spinners";
 import { GiCampCookingPot } from "react-icons/gi";
+import Image from "next/image";
 export default function Page({ params }) {
   const unWrapped = React.use(params);
   const category = unWrapped.id;
@@ -39,6 +40,7 @@ export default function Page({ params }) {
                 <div className="flex gap-2">
                   {meal.strYoutube && (
                     <Link
+                      prefetch={false}
                       href={meal.strYoutube}
                       target="_blank"
                       rel="noreferrer"
@@ -48,6 +50,7 @@ export default function Page({ params }) {
                     </Link>
                   )}
                   <Link
+                    prefetch={false}
                     href={`${meal.idMeal ? "/reciepes/" : "/category/"}${
                       meal.idMeal ? meal.idMeal : meal.strCategory
                     }`}

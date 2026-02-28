@@ -37,6 +37,7 @@ export default function Search() {
                 <div className="flex gap-2">
                   {meal.strYoutube && (
                     <Link
+                      prefetch={false}
                       href={meal.strYoutube}
                       target="_blank"
                       rel="noreferrer"
@@ -52,6 +53,7 @@ export default function Search() {
                     }`}
                     style={{ backgroundColor: colors.secondary }}
                     className=" rounded-sm px-3 py-2 text-white flex items-center gap-2"
+                    prefetch={false}
                   >
                     {meal.idMeal ? "Recipe" : "Explore"}
                     <GiCampCookingPot size={20} />

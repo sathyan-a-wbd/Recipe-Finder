@@ -6,6 +6,7 @@ import { FaAnglesRight } from "react-icons/fa6";
 import axios from "axios";
 import { GiCampCookingPot } from "react-icons/gi";
 import { FaYoutube } from "react-icons/fa6";
+import Image from "next/image";
 
 const Content = () => {
   let {
@@ -52,6 +53,7 @@ const Content = () => {
                 <div className="flex gap-2">
                   {meal.strYoutube && (
                     <Link
+                      prefetch={false}
                       href={meal.strYoutube}
                       target="_blank"
                       rel="noreferrer"
@@ -62,6 +64,7 @@ const Content = () => {
                     </Link>
                   )}
                   <Link
+                    prefetch={false}
                     // onClick={`${meal.idMeal ? () => handleSearch : ""}`}
                     href={`${meal.idMeal ? "/reciepes/" : "/category/"}${
                       meal.idMeal ? meal.idMeal : meal.strCategory

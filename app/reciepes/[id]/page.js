@@ -9,6 +9,7 @@ import More from "./More";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { GiFireBowl } from "react-icons/gi";
 import { LuCookingPot } from "react-icons/lu";
+import Image from "next/image";
 export default function Page({ params }) {
   const unWrapedId = React.use(params);
   const id = unWrapedId.id;
@@ -87,6 +88,7 @@ export default function Page({ params }) {
               <div className="flex gap-2">
                 {meal.strYoutube && (
                   <Link
+                    prefetch={false}
                     href={meal.strYoutube}
                     target="_blank"
                     rel="noreferrer"
